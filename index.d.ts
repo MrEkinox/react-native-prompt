@@ -38,6 +38,9 @@ export interface PromptOptions {
   type?: PromptType | PromptTypeIOS | PromptTypeAndroid;
 
   defaultValue?: string;
+    
+  /** @platform ios */
+  keyboardType?: string;
 
   /** @platform android */
   placeholder?: string;
