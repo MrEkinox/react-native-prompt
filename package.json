@@ -1,10 +1,10 @@
 {
-    "name": "react-native-prompt-android",
+    "name": "react-native-prompt",
     "version": "0.3.3",
     "description": "Polyfill for Alert.prompt on Android",
     "repository": {
         "type": "git",
-        "url": "https://github.com/shimohq/react-native-prompt-android"
+        "url": "https://github.com/MrEkinox/react-native-prompt"
     },
     "license": "MIT",
     "keywords": [
