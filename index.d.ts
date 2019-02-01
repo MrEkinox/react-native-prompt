@@ -17,7 +17,7 @@ type PromptTypeAndroid = 'numeric' | 'email-address' | 'phone-pad';
 
 type PromptStyleAndroid = 'default' | 'shimo';
 
-type KeybordTypeIOS = 'default' | 'email-address' | 'numeric' | 'phone-pad' | 'ascii-capable' | 'numbers-and-punctuation' | 'url', 'number-pad' | 'name-phone-pad' | 'decimal-pad' | 'twitter' | 'web-search';
+type KeybordTypeIOS = 'default' | 'email-address' | 'numeric' | 'phone-pad' | 'ascii-capable' | 'numbers-and-punctuation' | 'url' | 'number-pad' | 'name-phone-pad' | 'decimal-pad' | 'twitter' | 'web-search';
 
 export interface PromptOptions {
   /**
