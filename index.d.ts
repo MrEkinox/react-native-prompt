@@ -1,5 +1,5 @@
-// Type definitions for react-native-prompt-android 0.3.1
-// Project: https://github.com/shimohq/react-native-prompt-android
+// Type definitions for react-native-prompt 0.3.1
+// Project: https://github.com/mrekinox/react-native-prompt
 // Definitions by: Krystof Celba <https://github.com/krystofcelba>
 // TypeScript Version: 2.6.1
 
@@ -16,6 +16,8 @@ type PromptTypeIOS = 'login-password';
 type PromptTypeAndroid = 'numeric' | 'email-address' | 'phone-pad';
 
 type PromptStyleAndroid = 'default' | 'shimo';
+
+type KeybordTypeIOS = 'default' | 'email-address' | 'numeric', 'phone-pad' | 'ascii-capable' | 'numbers-and-punctuation' | 'url', 'number-pad' | 'name-phone-pad' | 'decimal-pad' | 'twitter' | 'web-search';
 
 export interface PromptOptions {
   /**
@@ -40,7 +42,7 @@ export interface PromptOptions {
   defaultValue?: string;
     
   /** @platform ios */
-  keyboardType?: string;
+  keyboardType?: KeybordTypeIOS;
 
   /** @platform android */
   placeholder?: string;
