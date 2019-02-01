@@ -1,4 +1,4 @@
-# react-native-prompt-android
+# react-native-prompt
 A polyfill library for Alert.prompt on Android platform, working both on Android and iOS platform(iOS using [AlertIOS.prompt](http://facebook.github.io/react-native/docs/alertios.html#prompt))
 
 
@@ -7,25 +7,25 @@ A polyfill library for Alert.prompt on Android platform, working both on Android
 * Install from npm
 
 ```bash
-npm i react-native-prompt-android --save
+npm i react-native-prompt --save
 ```
 
 * Link native library
 
 You can use react-native-cli:
 ```bash
-react-native link react-native-prompt-android
+react-native link react-native-prompt
 ```
 
 Or rnpm:
 ```bash
-rnpm link react-native-prompt-android
+rnpm link react-native-prompt
 ```
 
 ### Usage
 
 ```
-import prompt from 'react-native-prompt-android';
+import prompt from 'react-native-prompt';
 prompt(
     'Enter password',
     'Enter your password to claim your $1.5B in lottery winnings',
