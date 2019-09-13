@@ -170,6 +170,7 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
 
     @Override
     public void onShow(DialogInterface dialog) {
+        super.onDismiss(dialog);
         Log.i("on Show2", "arguments.getString(KEY_COLOR)");
     }
 
