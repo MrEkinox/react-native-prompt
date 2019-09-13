@@ -129,7 +129,7 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
             if (arguments.containsKey(ARG_PLACEHOLDER)) {
                 input.setHint(arguments.getString(ARG_PLACEHOLDER));
             }
-            setCursorColor(input, Color.parseColor("#000"))
+            setCursorColor(input, Color.parseColor("#000"));
             alertDialog.setView(input, 50, 15, 50, 0);
             mInputText = input;
         }
