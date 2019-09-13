@@ -135,19 +135,7 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
 
 
             if (arguments.containsKey(ARG_COLOR)) {
-                int color = Color.parseColor(arguments.getString(ARG_MESSAGE));
-                Button btnNEGATIVE = alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
-                Button btnPOSITIVE = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
-                Button btnNEUTRAL = alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL);
-                if (btnNEGATIVE != null) {
-                    btnNEGATIVE.setTextColor(color);
-                }
-                if (btnPOSITIVE != null) {
-                    btnPOSITIVE.setTextColor(color);
-                }
-                if (btnNEUTRAL != null) {
-                    btnNEUTRAL.setTextColor(color);
-                }
+                int color = Color.parseColor(arguments.getString(ARG_COLOR));
                 Drawable drawable = input.getBackground();
                 drawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
                 input.setBackground(drawable);
