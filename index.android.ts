@@ -19,6 +19,7 @@ export default function prompt(
             ...config,
             cancelable: options.cancelable !== false,
             type: options.type || "default",
+            color: options.color || "#41464b",
             defaultValue: options.defaultValue || "",
             placeholder: options.placeholder || ""
         };

@@ -30,6 +30,7 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
     /* package */ static final String ARG_BUTTON_NEGATIVE = "button_negative";
     /* package */ static final String ARG_BUTTON_NEUTRAL = "button_neutral";
     /* package */ static final String ARG_TYPE = "type";
+    /* package */ static final String ARG_COLOR = "color";
     /* package */ static final String ARG_DEFAULT_VALUE = "defaultValue";
     /* package */ static final String ARG_PLACEHOLDER = "placeholder";
 
@@ -131,11 +132,18 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
                 input.setHint(arguments.getString(ARG_PLACEHOLDER));
             }
 
-            Drawable drawable = input.getBackground();
-            drawable.setColorFilter(Color.parseColor("#fa0000"), PorterDuff.Mode.SRC_ATOP);
-            input.setBackground(drawable);
 
-            alertDialog.setView(input, 50, 15, 50, 0);
+            if (arguments.containsKey(ARG_COLOR)) {
+                ColorInt color = Color.parseColor(arguments.getString(ARG_MESSAGE));
+                alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(color);
+                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(color);
+                alertDialog.getButton(AlertDialog.BUTTON_NEUTRAL).setTextColor(color);
+                Drawable drawable = input.getBackground();
+                drawable.setColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_ATOP);
+                input.setBackground(drawable);
+            }
+
+            alertDialog.setView(input, 50, 0, 50, 0);
             mInputText = input;
         }
         return alertDialog;
