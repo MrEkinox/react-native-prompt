@@ -1,7 +1,9 @@
-// Type definitions for react-native-prompt 0.3.1
-// Project: https://github.com/mrekinox/react-native-prompt
+// Type definitions for react-native-prompt-android 0.3.1
+// Project: https://github.com/shimohq/react-native-prompt-android
 // Definitions by: Krystof Celba <https://github.com/krystofcelba>
 // TypeScript Version: 2.6.1
+
+import { KeyboardTypeOptions } from "react-native";
 
 type PromptButton = {
   text?: string;
@@ -16,8 +18,6 @@ type PromptTypeIOS = 'login-password';
 type PromptTypeAndroid = 'numeric' | 'email-address' | 'phone-pad';
 
 type PromptStyleAndroid = 'default' | 'shimo';
-
-type KeybordTypeIOS = 'default' | 'email-address' | 'numeric' | 'phone-pad' | 'ascii-capable' | 'numbers-and-punctuation' | 'url' | 'number-pad' | 'name-phone-pad' | 'decimal-pad' | 'twitter' | 'web-search';
 
 export interface PromptOptions {
   /**
@@ -40,9 +40,6 @@ export interface PromptOptions {
   type?: PromptType | PromptTypeIOS | PromptTypeAndroid;
 
   defaultValue?: string;
-    
-  /** @platform ios */
-  keyboardType?: KeybordTypeIOS;
 
   /** @platform android */
   placeholder?: string;
@@ -52,6 +49,9 @@ export interface PromptOptions {
 
   /** @platform android */
   style?: PromptStyleAndroid;
+
+  /** @platform ios */
+  keyboardType?: KeyboardTypeOptions;
 }
 
 declare function prompt(
