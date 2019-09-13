@@ -5,55 +5,55 @@
 
 import { KeyboardTypeOptions } from "react-native";
 
-type PromptButton = {
-  text?: string;
-  onPress?: (message: string) => void;
+export interface PromptButton {
+    text?: string;
+    onPress?: (text?: string) => void;
 
-  /** @platform ios */
-  style?: 'default' | 'cancel' | 'destructive';
-};
+    /** @platform ios */
+    style?: "default" | "cancel" | "destructive";
+}
 
-type PromptType = 'default' | 'plain-text' | 'secure-text';
-type PromptTypeIOS = 'login-password';
-type PromptTypeAndroid = 'numeric' | 'email-address' | 'phone-pad';
+type PromptType = "default" | "plain-text" | "secure-text";
+type PromptTypeIOS = "login-password";
+type PromptTypeAndroid = "numeric" | "email-address" | "phone-pad";
 
 export interface PromptOptions {
-  /**
-   * * Cross platform:
-   *
-   * - `'default'`
-   * - `'plain-text'`
-   * - `'secure-text'`
-   *
-   * * iOS only:
-   *
-   * - `'login-password'`
-   *
-   * * Android only:
-   *
-   * - `'numeric'`
-   * - `'email-address'`
-   * - `'phone-pad'`
-   */
-  type?: PromptType | PromptTypeIOS | PromptTypeAndroid;
+    /**
+     * * Cross platform:
+     *
+     * - `'default'`
+     * - `'plain-text'`
+     * - `'secure-text'`
+     *
+     * * iOS only:
+     *
+     * - `'login-password'`
+     *
+     * * Android only:
+     *
+     * - `'numeric'`
+     * - `'email-address'`
+     * - `'phone-pad'`
+     */
+    type?: PromptType | PromptTypeIOS | PromptTypeAndroid;
 
-  defaultValue?: string;
+    defaultValue?: string;
 
-  /** @platform android */
-  placeholder?: string;
+    /** @platform android */
+    placeholder?: string;
 
-  /** @platform android */
-  cancelable?: boolean;
+    /** @platform android */
+    cancelable?: boolean;
 
-  /** @platform ios */
-  keyboardType?: KeyboardTypeOptions;
+    /** @platform ios */
+    keyboardType?: KeyboardTypeOptions;
 }
 
 declare function prompt(
-  title?: string,
-  message?: string,
-  callbackOrButtons?: ((value: string) => void) | Array<PromptButton>,
-  options?: PromptOptions,
+    title?: string,
+    message?: string,
+    buttons?: PromptButton[],
+    options?: PromptOptions
 ): void;
 
 export default prompt;

@@ -1,4 +1,4 @@
-package im.shimo.react.prompt;
+package react.prompt;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.Callback;

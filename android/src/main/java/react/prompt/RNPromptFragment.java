@@ -1,4 +1,4 @@
-package im.shimo.react.prompt;
+package react.prompt;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -20,7 +20,6 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
     /* package */ static final String ARG_BUTTON_POSITIVE = "button_positive";
     /* package */ static final String ARG_BUTTON_NEGATIVE = "button_negative";
     /* package */ static final String ARG_BUTTON_NEUTRAL = "button_neutral";
-    /* package */ static final String ARG_ITEMS = "items";
     /* package */ static final String ARG_TYPE = "type";
     /* package */ static final String ARG_DEFAULT_VALUE = "defaultValue";
     /* package */ static final String ARG_PLACEHOLDER = "placeholder";
@@ -75,19 +74,13 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
         if (arguments.containsKey(ARG_BUTTON_NEUTRAL)) {
             builder.setNeutralButton(arguments.getString(ARG_BUTTON_NEUTRAL), this);
         }
-        // if both message and items are set, Android will only show the message
-        // and ignore the items argument entirely
         if (arguments.containsKey(ARG_MESSAGE)) {
             builder.setMessage(arguments.getString(ARG_MESSAGE));
         }
 
-        if (arguments.containsKey(ARG_ITEMS)) {
-            builder.setItems(arguments.getCharSequenceArray(ARG_ITEMS), this);
-        }
-
         AlertDialog alertDialog = builder.create();
 
-        if (arguments.containsKey(ARG_TYPE) && arguments.getString(ARG_TYPE) != "default") {
+        if (arguments.containsKey(ARG_TYPE) && !arguments.getString(ARG_TYPE).equals("default")) {
             // input style
             final EditText input;
             input = new EditText(activityContext);

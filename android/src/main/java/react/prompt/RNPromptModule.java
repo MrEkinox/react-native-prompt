@@ -1,4 +1,4 @@
-package im.shimo.react.prompt;
+package react.prompt;
 
 
 import android.app.Activity;
@@ -25,7 +25,7 @@ import javax.annotation.Nullable;
 public class RNPromptModule extends ReactContextBaseJavaModule implements LifecycleEventListener {
 
     /* package */ static final String FRAGMENT_TAG =
-            "im.shimo.react.prompt.RNPromptModule";
+            "react.prompt.RNPromptModule";
 
     /* package */ static final String NAME = "PromptAndroid";
 
@@ -36,7 +36,6 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
     /* package */ static final String KEY_BUTTON_POSITIVE = "buttonPositive";
     /* package */ static final String KEY_BUTTON_NEGATIVE = "buttonNegative";
     /* package */ static final String KEY_BUTTON_NEUTRAL = "buttonNeutral";
-    /* package */ static final String KEY_ITEMS = "items";
     /* package */ static final String KEY_CANCELABLE = "cancelable";
     /* package */ static final String KEY_TYPE = "type";
     /* package */ static final String KEY_DEFAULT_VALUE = "defaultValue";
@@ -114,14 +113,6 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
         }
         if (options.hasKey(KEY_BUTTON_NEUTRAL)) {
             args.putString(RNPromptFragment.ARG_BUTTON_NEUTRAL, options.getString(KEY_BUTTON_NEUTRAL));
-        }
-        if (options.hasKey(KEY_ITEMS)) {
-            ReadableArray items = options.getArray(KEY_ITEMS);
-            CharSequence[] itemsArray = new CharSequence[items.size()];
-            for (int i = 0; i < items.size(); i++) {
-                itemsArray[i] = items.getString(i);
-            }
-            args.putCharSequenceArray(RNPromptFragment.ARG_ITEMS, itemsArray);
         }
         if (options.hasKey(KEY_CANCELABLE)) {
             args.putBoolean(KEY_CANCELABLE, options.getBoolean(KEY_CANCELABLE));
