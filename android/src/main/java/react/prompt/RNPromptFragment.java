@@ -130,38 +130,15 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
             if (arguments.containsKey(ARG_PLACEHOLDER)) {
                 input.setHint(arguments.getString(ARG_PLACEHOLDER));
             }
-            setCursorColor(input, Color.parseColor("#000"));
+
+            Drawable drawable = yourEditText.getBackground();
+            drawable.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_ATOP);
+            input.setBackground(drawable);
+            
             alertDialog.setView(input, 50, 15, 50, 0);
             mInputText = input;
         }
         return alertDialog;
-    }
-
-    public static void setCursorColor(EditText view, @ColorInt int color) {
-        try {
-            // Get the cursor resource id
-            Field field = TextView.class.getDeclaredField("mCursorDrawableRes");
-            field.setAccessible(true);
-            int drawableResId = field.getInt(view);
-          
-            // Get the editor
-            field = TextView.class.getDeclaredField("mEditor");
-            field.setAccessible(true);
-            Object editor = field.get(view);
-          
-            // Get the drawable and set a color filter
-            Drawable drawable = ContextCompat.getDrawable(view.getContext(), drawableResId);
-            drawable.setColorFilter(color, PorterDuff.Mode.SRC_IN);
-            Drawable[] drawables = {drawable, drawable};
-          
-            // Set the drawables
-            field = editor.getClass().getDeclaredField("mCursorDrawable");
-            field.setAccessible(true);
-            field.set(editor, drawables);
-
-        } catch (Exception ignored) {
-
-        }
     }
 
     @Override
