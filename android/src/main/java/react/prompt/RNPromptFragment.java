@@ -160,7 +160,7 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
     @Override
     public void onShow(DialogInterface dialog) {
         Bundle arguments = getArguments();
-        Log.i("on Show", arguments.getString(ARG_COLOR))
+        Log.i("on Show", arguments.getString(ARG_COLOR));
         if (arguments.containsKey(ARG_COLOR)) {
             int color = Color.parseColor(arguments.getString(ARG_COLOR));
             promptFragment.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(color);
