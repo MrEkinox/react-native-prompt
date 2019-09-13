@@ -41,7 +41,6 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
     /* package */ static final String KEY_BUTTON_NEUTRAL = "buttonNeutral";
     /* package */ static final String KEY_CANCELABLE = "cancelable";
     /* package */ static final String KEY_TYPE = "type";
-    /* package */ static final String KEY_COLOR = "color";
     /* package */ static final String KEY_DEFAULT_VALUE = "defaultValue";
     /* package */ static final String KEY_PLACEHOLDER = "placeholder";
 
@@ -123,9 +122,6 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
         }
         if (options.hasKey(KEY_TYPE)) {
             args.putString(KEY_TYPE, options.getString(KEY_TYPE));
-        }
-        if (options.hasKey(KEY_COLOR)) {
-            args.putString(KEY_COLOR, options.getString(KEY_COLOR));
         }
         if (options.hasKey(KEY_DEFAULT_VALUE)) {
             args.putString(KEY_DEFAULT_VALUE, options.getString(KEY_DEFAULT_VALUE));

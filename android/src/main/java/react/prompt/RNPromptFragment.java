@@ -32,7 +32,6 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
     /* package */ static final String ARG_BUTTON_NEGATIVE = "button_negative";
     /* package */ static final String ARG_BUTTON_NEUTRAL = "button_neutral";
     /* package */ static final String ARG_TYPE = "type";
-    /* package */ static final String ARG_COLOR = "color";
     /* package */ static final String ARG_DEFAULT_VALUE = "defaultValue";
     /* package */ static final String ARG_PLACEHOLDER = "placeholder";
 
@@ -134,24 +133,6 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
                 input.setHint(arguments.getString(ARG_PLACEHOLDER));
             }
 
-
-            if (arguments.containsKey(ARG_COLOR)) {
-                int color = Color.parseColor(arguments.getString(ARG_COLOR));
-                Drawable drawable = input.getBackground();
-                drawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
-                input.setBackground(drawable);
-                alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-                    @Override
-                    public void onShow(DialogInterface dialog) {
-                        Log.e("TEst", "Doung");
-                        int color = Color.parseColor(getArguments().getString(ARG_COLOR));
-                        ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(color);
-                        ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_NEUTRAL).setTextColor(color);
-                        ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(color);
-                    }
-                });
-            }
-
             alertDialog.setView(input, 50, 0, 50, 0);
             mInputText = input;
         }
@@ -176,12 +157,6 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
                 mListener.onConfirm(which, "");
             }
         }
-    }
-
-    @Override
-    public void onShow(DialogInterface dialog) {
-        super.onDismiss(dialog);
-        Log.i("on Show2", "arguments.getString(KEY_COLOR)");
     }
 
     @Override

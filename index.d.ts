@@ -45,9 +45,6 @@ export interface PromptOptions {
     /** @platform android */
     cancelable?: boolean;
 
-    /** @platform android */
-    color?: string;
-
     /** @platform ios */
     keyboardType?: KeyboardTypeOptions;
 }
