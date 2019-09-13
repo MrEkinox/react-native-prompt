@@ -143,8 +143,11 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
                 alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
                     @Override
                     public void onShow(DialogInterface dialog) {
+                        Log.e("TEst", "Doung");
                         int color = Color.parseColor(getArguments().getString(ARG_COLOR));
-                        Log.e("TEst", getArguments().getString(ARG_COLOR));
+                        ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(color);
+                        ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(color);
+                        ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(color);
                     }
                 });
             }
