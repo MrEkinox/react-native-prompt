@@ -17,8 +17,6 @@ type PromptType = 'default' | 'plain-text' | 'secure-text';
 type PromptTypeIOS = 'login-password';
 type PromptTypeAndroid = 'numeric' | 'email-address' | 'phone-pad';
 
-type PromptStyleAndroid = 'default' | 'shimo';
-
 export interface PromptOptions {
   /**
    * * Cross platform:
@@ -46,9 +44,6 @@ export interface PromptOptions {
 
   /** @platform android */
   cancelable?: boolean;
-
-  /** @platform android */
-  style?: PromptStyleAndroid;
 
   /** @platform ios */
   keyboardType?: KeyboardTypeOptions;
