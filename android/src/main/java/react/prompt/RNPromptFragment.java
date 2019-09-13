@@ -142,9 +142,9 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
                 input.setBackground(drawable);
                 alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
                     @Override
-                    public void onShow(DialogInterface dialogInterface) {
+                    public void onShow(DialogInterface dialog) {
                         Log.e("TEst", "Doung");
-                        Button button = dialogInterface.getButton(AlertDialog.BUTTON_POSITIVE);
+                        Button positiveButton = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE);
                     }
                 });
             }
