@@ -87,7 +87,7 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
 
         AlertDialog alertDialog = builder.create();
 
-        if (arguments.containsKey(ARG_TYPE) && arguments.getString(ARG_TYPE) !== "default") {
+        if (arguments.containsKey(ARG_TYPE) && arguments.getString(ARG_TYPE) != "default") {
             // input style
             final EditText input;
             input = new EditText(activityContext);
