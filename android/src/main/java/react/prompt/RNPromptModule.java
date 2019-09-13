@@ -20,7 +20,6 @@ import com.facebook.react.modules.dialog.DialogModule;
 import java.util.Map;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 
 import javax.annotation.Nullable;
 
@@ -186,13 +185,6 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
                     promptFragment.setCancelable(arguments.getBoolean(KEY_CANCELABLE));
                 }
                 promptFragment.show(mFragmentManager, FRAGMENT_TAG);
-
-                if (arguments.containsKey(KEY_COLOR)) {
-                    int color = Color.parseColor(arguments.getString(KEY_COLOR));
-                    promptFragment.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(color);
-                    promptFragment.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(color);
-                    promptFragment.getButton(AlertDialog.BUTTON_NEUTRAL).setTextColor(color);
-                }
             } else {
                 mFragmentToShow = promptFragment;
             }
