@@ -137,7 +137,7 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = this.createDialog(getActivity(), getArguments());
-        if (mInputText && mInputText.requestFocus()) {
+        if (mInputText != null && mInputText.requestFocus()) {
             dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
         return dialog;
@@ -146,7 +146,7 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
     @Override
     public void onClick(DialogInterface dialog, int which) {
         if (mListener != null) {
-            if (mInputText) {
+            if (mInputText != null) {
                 mListener.onConfirm(which, mInputText.getText().toString());
             } else {
                 mListener.onConfirm(which, "");
