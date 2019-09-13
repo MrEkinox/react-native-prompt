@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
-import android.graphics.PorterDuff.Mode;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import java.lang.reflect.Field;
 import java.lang.Object;
