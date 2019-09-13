@@ -131,10 +131,10 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
                 input.setHint(arguments.getString(ARG_PLACEHOLDER));
             }
 
-            Drawable drawable = yourEditText.getBackground();
+            Drawable drawable = input.getBackground();
             drawable.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_ATOP);
             input.setBackground(drawable);
-            
+
             alertDialog.setView(input, 50, 15, 50, 0);
             mInputText = input;
         }
