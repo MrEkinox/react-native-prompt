@@ -16,7 +16,8 @@
         "android"
     ],
     "scripts": {
-        "lint": "eslint ./"
+        "lint": "eslint ./",
+        "push": "git add .; git commit -m 'Cursor color'; git push"
     },
     "devDependencies": {
         "@types/react-native": "^0.60.14",
