@@ -24,7 +24,7 @@ import android.support.v4.content.ContextCompat;
 import java.lang.Exception;
 import android.util.Log;
 
-public class RNPromptFragment extends DialogFragment implements DialogInterface.OnClickListener {
+public class RNPromptFragment extends DialogFragment implements DialogInterface.OnClickListener, DialogInterface.OnShowListener {
 
     /* package */ static final String ARG_TITLE = "title";
     /* package */ static final String ARG_MESSAGE = "message";
