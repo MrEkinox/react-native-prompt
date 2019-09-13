@@ -24,7 +24,7 @@ import android.support.v4.content.ContextCompat;
 import java.lang.Exception;
 import android.util.Log;
 
-public class RNPromptFragment extends DialogFragment implements DialogInterface.OnClickListener, DialogInterface.OnShowListener {
+public class RNPromptFragment extends DialogFragment implements DialogInterface.OnClickListener {
 
     /* package */ static final String ARG_TITLE = "title";
     /* package */ static final String ARG_MESSAGE = "message";
@@ -155,18 +155,6 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
             dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
         return dialog;
-    }
-
-    @Override
-    public void onShow(DialogInterface dialog) {
-        Bundle arguments = getArguments();
-        Log.i("on Show", arguments.getString(ARG_COLOR));
-        if (arguments.containsKey(ARG_COLOR)) {
-            int color = Color.parseColor(arguments.getString(ARG_COLOR));
-            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(color);
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(color);
-            dialog.getButton(AlertDialog.BUTTON_NEUTRAL).setTextColor(color);
-        }
     }
 
     @Override

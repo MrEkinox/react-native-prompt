@@ -20,6 +20,7 @@ import com.facebook.react.modules.dialog.DialogModule;
 import java.util.Map;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 
 import javax.annotation.Nullable;
 
@@ -191,7 +192,7 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
         }
     }
 
-    class PromptFragmentListener implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener {
+    class PromptFragmentListener implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener, DialogInterface.OnShowListener {
 
         private final Callback mCallback;
         private boolean mCallbackConsumed = false;
@@ -203,6 +204,15 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
         @Override
         public void onClick(DialogInterface dialog, int which) {
             onConfirm(which, "");
+        }
+
+        @Override
+        public void onShow(DialogInterface dialog) {
+            Bundle arguments = getArguments();
+            Log.i("on Show", arguments.getString(KEY_COLOR));
+            if (arguments.containsKey(KEY_COLOR)) {
+                int color = Color.parseColor(arguments.getString(KEY_COLOR));
+            }
         }
 
         public void onConfirm(int which, String input) {
