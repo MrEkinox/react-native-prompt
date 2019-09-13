@@ -188,7 +188,7 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
                 promptFragment.show(mFragmentManager, FRAGMENT_TAG);
 
                 if (arguments.containsKey(KEY_COLOR)) {
-                    Log.i(arguments.getString(KEY_COLOR));
+                    Log.i("COLOR", arguments.getString(KEY_COLOR));
                     int color = Color.parseColor(arguments.getString(KEY_COLOR));
                     promptFragment.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(color);
                     promptFragment.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(color);
