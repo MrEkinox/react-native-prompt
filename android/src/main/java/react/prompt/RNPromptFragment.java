@@ -132,7 +132,7 @@ public class RNPromptFragment extends DialogFragment implements DialogInterface.
             }
 
             Drawable drawable = input.getBackground();
-            drawable.setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_ATOP);
+            drawable.setColorFilter(Color.parseColor("#fa0000"), PorterDuff.Mode.SRC_ATOP);
             input.setBackground(drawable);
 
             alertDialog.setView(input, 50, 15, 50, 0);
