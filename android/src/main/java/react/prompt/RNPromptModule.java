@@ -208,7 +208,7 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
 
         @Override
         public void onShow(DialogInterface dialog) {
-            Log.i("on Show", "arguments.getString(KEY_COLOR)")
+            Log.i("on Show", "arguments.getString(KEY_COLOR)");
         }
 
         public void onConfirm(int which, String input) {
