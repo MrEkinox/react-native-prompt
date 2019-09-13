@@ -192,7 +192,7 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
         }
     }
 
-    class PromptFragmentListener implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener, DialogInterface.OnShowListener {
+    class PromptFragmentListener implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener {
 
         private final Callback mCallback;
         private boolean mCallbackConsumed = false;
@@ -204,11 +204,6 @@ public class RNPromptModule extends ReactContextBaseJavaModule implements Lifecy
         @Override
         public void onClick(DialogInterface dialog, int which) {
             onConfirm(which, "");
-        }
-
-        @Override
-        public void onShow(DialogInterface dialog) {
-            Log.i("on Show", "arguments.getString(KEY_COLOR)");
         }
 
         public void onConfirm(int which, String input) {
