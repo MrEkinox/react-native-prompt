@@ -19,7 +19,7 @@ import com.facebook.react.modules.dialog.DialogModule;
 
 import java.util.Map;
 import android.graphics.Color;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 
 import javax.annotation.Nullable;
